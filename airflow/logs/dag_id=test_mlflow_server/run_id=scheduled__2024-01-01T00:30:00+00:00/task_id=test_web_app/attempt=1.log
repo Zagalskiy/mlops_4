@@ -1,0 +1,32 @@
+[2024-01-05T21:57:54.767+0300] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_mlflow_server.test_web_app scheduled__2024-01-01T00:30:00+00:00 [queued]>
+[2024-01-05T21:57:54.773+0300] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_mlflow_server.test_web_app scheduled__2024-01-01T00:30:00+00:00 [queued]>
+[2024-01-05T21:57:54.773+0300] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-05T21:57:54.773+0300] {taskinstance.py:1289} INFO - Starting attempt 1 of 2
+[2024-01-05T21:57:54.773+0300] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-05T21:57:54.785+0300] {taskinstance.py:1309} INFO - Executing <Task(PythonOperator): test_web_app> on 2024-01-01 00:30:00+00:00
+[2024-01-05T21:57:54.787+0300] {standard_task_runner.py:55} INFO - Started process 173019 to run task
+[2024-01-05T21:57:54.791+0300] {standard_task_runner.py:82} INFO - Running: ['airflow', 'tasks', 'run', 'test_mlflow_server', 'test_web_app', 'scheduled__2024-01-01T00:30:00+00:00', '--job-id', '449', '--raw', '--subdir', 'DAGS_FOLDER/tests.py', '--cfg-path', '/tmp/tmpq6k6aaie']
+[2024-01-05T21:57:54.793+0300] {standard_task_runner.py:83} INFO - Job 449: Subtask test_web_app
+[2024-01-05T21:57:54.920+0300] {task_command.py:389} INFO - Running <TaskInstance: test_mlflow_server.test_web_app scheduled__2024-01-01T00:30:00+00:00 [running]> on host prod-srv
+[2024-01-05T21:57:55.029+0300] {taskinstance.py:1516} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=test_mlflow_server
+AIRFLOW_CTX_TASK_ID=test_web_app
+AIRFLOW_CTX_EXECUTION_DATE=2024-01-01T00:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-01-01T00:30:00+00:00
+[2024-01-05T21:57:55.035+0300] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/igor/mlops_4/venv4/lib/python3.10/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/igor/mlops_4/venv4/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/igor/mlops_4/airflow/dags/tests.py", line 10, in test_url
+    assert r.status_code == 303
+AssertionError
+[2024-01-05T21:57:55.067+0300] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=test_mlflow_server, task_id=test_web_app, execution_date=20240101T003000, start_date=20240105T185754, end_date=20240105T185755
+[2024-01-05T21:57:55.082+0300] {standard_task_runner.py:100} ERROR - Failed to execute job 449 for task test_web_app (; 173019)
+[2024-01-05T21:57:55.124+0300] {local_task_job.py:212} INFO - Task exited with return code 1
+[2024-01-05T21:57:55.158+0300] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

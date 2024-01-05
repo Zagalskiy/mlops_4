@@ -1,0 +1,27 @@
+[2024-01-05T22:15:00.239+0300] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Google_X_mention_score.test_model_theta scheduled__2024-01-03T17:30:00+00:00 [queued]>
+[2024-01-05T22:15:00.246+0300] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Google_X_mention_score.test_model_theta scheduled__2024-01-03T17:30:00+00:00 [queued]>
+[2024-01-05T22:15:00.247+0300] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-05T22:15:00.247+0300] {taskinstance.py:1289} INFO - Starting attempt 1 of 2
+[2024-01-05T22:15:00.247+0300] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-05T22:15:00.256+0300] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): test_model_theta> on 2024-01-03 17:30:00+00:00
+[2024-01-05T22:15:00.259+0300] {standard_task_runner.py:55} INFO - Started process 212248 to run task
+[2024-01-05T22:15:00.263+0300] {standard_task_runner.py:82} INFO - Running: ['airflow', 'tasks', 'run', 'Google_X_mention_score', 'test_model_theta', 'scheduled__2024-01-03T17:30:00+00:00', '--job-id', '601', '--raw', '--subdir', 'DAGS_FOLDER/google_mention_score.py', '--cfg-path', '/tmp/tmp7td2hcae']
+[2024-01-05T22:15:00.264+0300] {standard_task_runner.py:83} INFO - Job 601: Subtask test_model_theta
+[2024-01-05T22:15:00.364+0300] {task_command.py:389} INFO - Running <TaskInstance: Google_X_mention_score.test_model_theta scheduled__2024-01-03T17:30:00+00:00 [running]> on host prod-srv
+[2024-01-05T22:15:00.457+0300] {taskinstance.py:1516} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=Google_X_mention_score
+AIRFLOW_CTX_TASK_ID=test_model_theta
+AIRFLOW_CTX_EXECUTION_DATE=2024-01-03T17:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-01-03T17:30:00+00:00
+[2024-01-05T22:15:00.460+0300] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-01-05T22:15:00.461+0300] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/igor/mlops_4/scripts/test_model.py theta']
+[2024-01-05T22:15:00.467+0300] {subprocess.py:86} INFO - Output:
+[2024-01-05T22:15:02.820+0300] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-05T22:15:02.862+0300] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=Google_X_mention_score, task_id=test_model_theta, execution_date=20240103T173000, start_date=20240105T191500, end_date=20240105T191502
+[2024-01-05T22:15:02.896+0300] {local_task_job.py:212} INFO - Task exited with return code 0
+[2024-01-05T22:15:02.920+0300] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

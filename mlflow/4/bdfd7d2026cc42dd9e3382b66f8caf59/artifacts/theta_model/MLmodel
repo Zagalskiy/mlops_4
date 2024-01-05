@@ -1,0 +1,20 @@
+artifact_path: theta_model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.3.2
+mlflow_version: 2.9.2
+model_size_bytes: 85044
+model_uuid: de6d3ea68576406c8e1a34b656725873
+run_id: bdfd7d2026cc42dd9e3382b66f8caf59
+utc_time_created: '2024-01-05 19:14:08.750255'
